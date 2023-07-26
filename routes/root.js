@@ -6,28 +6,13 @@ const fastify = require("fastify");
 // } = require("fastify-type-provider-zod");
 const z = require("zod");
 
-("use strict")
+("use strict");
 /** @param {import('fastify').FastifyInstance} fastify */
 module.exports = async function (fastify) {
+  
   const app = fastify.withTypeProvider();
-  // app.route({
-  //   method: "GET",
-  //   url: "/test",
-  //   schema: {
-  //     querystring: z.object({
-  //       name: z.string().min(4).optional(),
-  //     }),
-  //     response: {
-  //       200: z.string(),
-  //     },
-  //   },
-  //   handler: async (req, res) => {
-  //     res.send(req.query.name);
-  //   },
-  // });
-
   app.get(
-    "/test",
+    "/",
     {
       schema: {
         response: {
